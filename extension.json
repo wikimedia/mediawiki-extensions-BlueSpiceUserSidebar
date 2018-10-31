@@ -31,8 +31,7 @@
 		"BlueSpiceUserSidebar": "i18n"
 	},
 	"AutoloadNamespaces": {
-		"BlueSpice\\UserSidebar\\": "src/",
-		"BlueSpice\\UserSidebar\\Tests\\": "tests/phpunit"
+		"BlueSpice\\UserSidebar\\": "src/"
 	},
 	"ResourceModules": {
 		"ext.blueSpiceUserSidebar.styles": {
