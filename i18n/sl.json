@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Skalcaa"
+			"Skalcaa",
+			"Dbc334"
 		]
 	},
-	"bs-usersidebar-desc": "Doda fokusni zavihek v stransko vrstico"
+	"bs-usersidebar-desc": "Prilagodljiv osebni navigacijski meni"
 }
