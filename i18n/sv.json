@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lokal Profil"
+			"Lokal Profil",
+			"WikiPhoenix"
 		]
 	},
-	"bs-usersidebar-desc": "Lägger till fokus-fliken till sidopanelen"
+	"bs-usersidebar-desc": "Lägger till fokus-fliken till sidopanelen",
+	"bs-usersidebar-nav-title": "Personlig navigering",
+	"bs-edit-user-sidebar-link-text": "Redigera sidfältet",
+	"bs-edit-user-sidebar-link-title": "Redigera sidfältet"
 }
