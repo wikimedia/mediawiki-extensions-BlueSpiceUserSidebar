@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dejan Savuljesku <savuljesku@hallowelt.com>"
+			"Dejan Savuljesku <savuljesku@hallowelt.com>",
+			"Metalhead64"
 		]
 	},
-	"bs-usersidebar-nav-title": "Persönliche Navigation",
 	"bs-usersidebar-desc": "Anpassbares persönliches Navigationsmenü",
-	"bs-edit-user-sidebar-link-text": "Sidebar bearbeiten",
-	"bs-edit-user-sidebar-link-title": "Sidebar bearbeiten"
+	"bs-usersidebar-nav-title": "Persönliche Navigation",
+	"bs-edit-user-sidebar-link-text": "Seitenleiste bearbeiten",
+	"bs-edit-user-sidebar-link-title": "Seitenleiste bearbeiten"
 }
