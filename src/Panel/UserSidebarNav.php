@@ -15,7 +15,7 @@ class UserSidebarNav extends PanelContainer {
 	public function __construct( $skintemplate ) {
 		parent::__construct( $skintemplate );
 		$user = $this->skintemplate->getSkin()->getUser();
-		$this->userSidebarTitle = \Title::makeTitle( NS_USER, $user->getName().'/Sidebar' );
+		$this->userSidebarTitle = \Title::makeTitle( NS_USER, $user->getName() . '/Sidebar' );
 
 		$this->widgetRegistry = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceUserSidebarWidgets' );
 		$this->sidebarParser = new SidebarParser( $this->userSidebarTitle, $this->widgetRegistry );
@@ -30,29 +30,28 @@ class UserSidebarNav extends PanelContainer {
 	}
 
 	protected function makePanels() {
-
-		if( $this->userSidebarTitle->exists() ) {
+		if ( $this->userSidebarTitle->exists() ) {
 			$this->sidebarParser->parse();
 			$sidebarItems = $this->sidebarParser->getItems();
 		} else {
-			//If user sidebar page is not available show only widgets
+			// If user sidebar page is not available show only widgets
 			$sidebarItems = $this->getWidgets();
 		}
 
 		$panels = [];
 
 		$cnt = 0;
-		foreach( $sidebarItems as $section => $links ) {
-			$cnt ++;
+		foreach ( $sidebarItems as $section => $links ) {
+			$cnt++;
 			$sectionId = "bs-usersidebar-$cnt";
-			if( $this->isWidget( $section ) ) {
-				if( isset( $links['callback'] ) && is_callable( $links['callback'] ) ) {
+			if ( $this->isWidget( $section ) ) {
+				if ( isset( $links['callback'] ) && is_callable( $links['callback'] ) ) {
 					$params = [];
-					if( isset( $links['params'] ) ) {
+					if ( isset( $links['params'] ) ) {
 						$params = $links['params'];
 					}
-					$widgetPanel = call_user_func_array( $links['callback'], [$this->skintemplate, $params] );
-					if( $widgetPanel instanceof IPanel ) {
+					$widgetPanel = call_user_func_array( $links['callback'], [ $this->skintemplate, $params ] );
+					if ( $widgetPanel instanceof IPanel ) {
 						$panels[$sectionId] = $widgetPanel;
 					}
 				}
@@ -73,7 +72,7 @@ class UserSidebarNav extends PanelContainer {
 	}
 
 	protected function isWidget( $name ) {
-		if( isset( $this->widgetRegistry[$name] ) ) {
+		if ( isset( $this->widgetRegistry[$name] ) ) {
 			return true;
 		}
 		return false;
@@ -81,7 +80,7 @@ class UserSidebarNav extends PanelContainer {
 
 	protected function getWidgets() {
 		$widgets = [];
-		foreach( $this->widgetRegistry as $key => $config ) {
+		foreach ( $this->widgetRegistry as $key => $config ) {
 			$widgets[$key] = [
 				'callback' => $config['callback']
 			];
@@ -101,19 +100,18 @@ class UserSidebarNav extends PanelContainer {
 		$editLink = $this->linkRenderer->makeLink(
 			$this->userSidebarTitle,
 			new \HtmlArmor( $text ),
-			array(
+			[
 				'id' => 'bs-usersidebar-edit',
 				'title' => wfMessage( 'bs-edit-user-sidebar-link-title' )->plain(),
 				'class' => 'bs-usersidebar-edit-link bs-calumma-sidebar-edit-link'
-			),
-			array(
+			],
+			[
 				'action' => 'edit',
 				'preload' => ''
-			)
+			]
 		);
 
-		//Temporary
+		// Temporary
 		return $editLink;
 	}
 }
-

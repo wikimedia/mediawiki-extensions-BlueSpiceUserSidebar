@@ -8,7 +8,7 @@ class UserSidebarDefaultText extends EditFormPreloadText {
 
 	protected function skipProcessing() {
 		$user = $this->getContext()->getUser();
-		$userPage =\Title::makeTitle( NS_USER, $user->getName() . "/Sidebar" );
+		$userPage = \Title::makeTitle( NS_USER, $user->getName() . "/Sidebar" );
 		if ( $this->title->equals( $userPage ) ) {
 			return false;
 		}
@@ -23,8 +23,8 @@ class UserSidebarDefaultText extends EditFormPreloadText {
 	protected function getWidgetLinks() {
 		$widgetRegistry = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceUserSidebarWidgets' );
 		$widgets = [];
-		foreach( $widgetRegistry as $key => $config ) {
-			if( !$config['default'] ) {
+		foreach ( $widgetRegistry as $key => $config ) {
+			if ( !$config['default'] ) {
 				continue;
 			}
 			$widgets[] = "* $key";
