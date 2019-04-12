@@ -25,7 +25,7 @@ class AddUserSidebar extends SkinTemplateOutputPageBeforeExec {
 			[
 				'bs-usersidebar' => [
 					'position' => 30,
-					'callback' => function( $sktemplate ) {
+					'callback' => function ( $sktemplate ) {
 						return new UserSidebarNav( $sktemplate );
 					}
 				]

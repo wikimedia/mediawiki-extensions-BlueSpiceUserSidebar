@@ -28,7 +28,7 @@ class SidebarParser {
 	}
 
 	protected function getPageTextLines() {
-		if( $this->title->exists() === false ) {
+		if ( $this->title->exists() === false ) {
 			return [];
 		}
 		$wikiPage = \WikiPage::factory( $this->title );
@@ -36,41 +36,46 @@ class SidebarParser {
 
 		$content = preg_replace( '#<noinclude>.*?<\/noinclude>#si', '', $content );
 
-		$this->textLines = explode( "\n", $content);
+		$this->textLines = explode( "\n", $content );
 	}
 
 	protected function parseInternaly() {
 		$section = '';
 		$this->links = [];
-		foreach( $this->textLines as $line ){
+		foreach ( $this->textLines as $line ) {
 			$depth = 0;
 			$isIndentCharacter = true;
 
 			do {
-				if ( isset( $line[$depth] ) && $line[$depth] == '*' ) $depth++;
-				else $isIndentCharacter = false;
+				if ( isset( $line[$depth] ) && $line[$depth] == '*' ) {
+					$depth++;
+				} else {
+					$isIndentCharacter = false;
+				}
 			}
 			while ( $isIndentCharacter );
 
 			$line = trim( substr( $line, $depth ) );
 
-			if ( empty( $line ) ){ continue; }
+			if ( empty( $line ) ) {
+				continue;
+			}
 
 			$type = $this->getLineType( $line );
 			if ( $depth === 1 ) {
-				if( $type === self::SECTION ) {
+				if ( $type === self::SECTION ) {
 					$section = $line;
 					continue;
 				}
 				$section = '';
 			}
 
-			if( $type === self::LINK_INTERNAL ) {
+			if ( $type === self::LINK_INTERNAL ) {
 				$this->links[$section][] = $this->parseInternalLink( $line );
-			} else if( $type === self::LINK_EXTERNAL ) {
+			} elseif ( $type === self::LINK_EXTERNAL ) {
 				$this->links[$section][] = $this->parseExternalLink( $line );
 			} else {
-				$widgetData =  $this->parseWidget( $line );
+				$widgetData = $this->parseWidget( $line );
 				$this->links[$widgetData['name']] = $widgetData;
 			}
 		}
@@ -88,11 +93,10 @@ class SidebarParser {
 
 		$item['href'] = $title->getFullURL();
 
-		if ( isset( $elements[1] ) ){
+		if ( isset( $elements[1] ) ) {
 			$item['text'] = $elements[1];
 			$item['title'] = $elements[1];
-		}
-		else {
+		} else {
 			$item['text'] = $title->getText();
 			$item['title'] = $title->getText();
 		}
@@ -102,7 +106,7 @@ class SidebarParser {
 
 	protected function parseExternalLink( $line ) {
 		$item = [];
-		if( strpos( $line, '[' ) === 0 ) {
+		if ( strpos( $line, '[' ) === 0 ) {
 			$line = ltrim( $line, '[' );
 			$line = rtrim( $line, ']' );
 			$elements = explode( ' ', $line );
@@ -114,7 +118,9 @@ class SidebarParser {
 		$item['href'] = $elements[0];
 
 		array_shift( $elements );
-		if( empty( $elements ) ) return false;
+		if ( empty( $elements ) ) {
+			return false;
+		}
 
 		$element = implode( ' ', $elements );
 		$item['text'] = $element;
@@ -128,25 +134,25 @@ class SidebarParser {
 	}
 
 	protected function getLineType( $line ) {
-		if ( substr( $line ,0, 1 ) === '[' ) {
-			if ( substr( $line , 0, 2 ) === '[[' ) {
+		if ( substr( $line, 0, 1 ) === '[' ) {
+			if ( substr( $line, 0, 2 ) === '[[' ) {
 				return self::LINK_INTERNAL;
 			}
 			return self::LINK_EXTERNAL;
 		}
 
-		//If its not a link it can be widget keyword or section
+		// If its not a link it can be widget keyword or section
 		$widgetKeyword = $this->parseWidgetLine( $line );
-		if( $widgetKeyword !== false ) {
+		if ( $widgetKeyword !== false ) {
 			return self::WIDGET;
 		}
 
 		// Its a link without square brackets
 		$bits = explode( '|', $line );
-		if( count( $bits ) > 1 ) {
+		if ( count( $bits ) > 1 ) {
 			// Maybe better to check for double slash,
 			// but its no impossible for page to have such name
-			if( substr( $line, 0, 4 ) === 'http' ) {
+			if ( substr( $line, 0, 4 ) === 'http' ) {
 				return self::LINK_EXTERNAL;
 			}
 			return self::LINK_INTERNAL;
@@ -156,13 +162,13 @@ class SidebarParser {
 	}
 
 	protected function parseWidgetLine( $line ) {
-		if ( substr( $line ,0, 1 ) === '[' ) {
+		if ( substr( $line, 0, 1 ) === '[' ) {
 			return false;
 		}
 		$bits = explode( '|', $line );
 		$name = array_shift( $bits );
 
-		if( !isset( $this->widgetRegistry[$name] ) ) {
+		if ( !isset( $this->widgetRegistry[$name] ) ) {
 			return false;
 		}
 
@@ -171,12 +177,12 @@ class SidebarParser {
 			'callback' => $this->widgetRegistry[$name]['callback'],
 			'params' => []
 		];
-		if( empty( $bits ) ) {
+		if ( empty( $bits ) ) {
 			return $res;
 		}
 
 		$params = [];
-		foreach( $bits as $bit ) {
+		foreach ( $bits as $bit ) {
 			$paramBits = explode( '=', $bit );
 			$paramName = array_shift( $paramBits );
 			$params[$paramName] = !empty( $paramBits ) ? $paramBits[0] : '';
@@ -185,5 +191,5 @@ class SidebarParser {
 
 		$res['params'] = $params;
 		return $res;
- 	}
+	}
 }
