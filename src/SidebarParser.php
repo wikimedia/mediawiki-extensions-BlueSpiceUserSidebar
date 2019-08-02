@@ -90,6 +90,9 @@ class SidebarParser {
 		$item['classes'] = ' bs-usersidebar-internal ';
 
 		$title = \Title::newFromText( $elements[0] );
+		if ( !$title ) {
+			return [];
+		}
 
 		$item['href'] = $title->getFullURL();
 
