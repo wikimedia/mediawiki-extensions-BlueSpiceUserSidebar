@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Zazzzz",
+			"佛壁灯"
 		]
 	},
-	"bs-usersidebar-desc": "将焦点标签加入侧边栏"
+	"bs-usersidebar-desc": "自定义个人导航菜单",
+	"bs-edit-user-sidebar-link-text": "编辑侧边栏",
+	"bs-edit-user-sidebar-link-title": "编辑侧边栏",
+	"bs-usersidebar-nav-title": "个人导航菜单"
 }

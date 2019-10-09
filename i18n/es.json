@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amitie 10g"
+			"Amitie 10g",
+			"Fitoschido"
 		]
 	},
-	"bs-usersidebar-desc": "Agrega la pestaña de foco a la barra lateral"
+	"bs-usersidebar-desc": "Menú de navegación personal adaptable",
+	"bs-usersidebar-nav-title": "Navegación personal",
+	"bs-edit-user-sidebar-link-text": "Editar barra lateral",
+	"bs-edit-user-sidebar-link-title": "Editar barra lateral"
 }
