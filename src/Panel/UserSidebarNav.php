@@ -50,6 +50,9 @@ class UserSidebarNav extends PanelContainer {
 					if ( isset( $links['params'] ) ) {
 						$params = $links['params'];
 					}
+					$params['panelId'] = $sectionId;
+					$params['panelIdPrefix'] = "bs-usersidebar-";
+
 					$widgetPanel = call_user_func_array( $links['callback'], [ $this->skintemplate, $params ] );
 					if ( $widgetPanel instanceof IPanel ) {
 						$panels[$sectionId] = $widgetPanel;
@@ -58,7 +61,7 @@ class UserSidebarNav extends PanelContainer {
 				continue;
 			}
 
-			$panels[$sectionId] = new CollapsibleLinks( $this->skintemplate, $section, $links );
+			$panels[$sectionId] = new CollapsibleLinks( $this->skintemplate, $section, $links, $sectionId );
 		}
 		return $panels;
 	}
