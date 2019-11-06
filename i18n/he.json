@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Erelon"
+			"Erelon",
+			"Steeve815"
 		]
 	},
 	"bs-edit-user-sidebar-link-text": "עריכת סרגל הצד",
-	"bs-edit-user-sidebar-link-title": "עריכת סרגל הצד"
+	"bs-edit-user-sidebar-link-title": "עריכת סרגל הצד",
+	"bs-usersidebar-nav-title": "ניווט אישי"
 }
