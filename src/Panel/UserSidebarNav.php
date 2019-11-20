@@ -2,6 +2,7 @@
 
 namespace BlueSpice\UserSidebar\Panel;
 
+use BlueSpice\Services;
 use BlueSpice\Calumma\IPanel;
 use BlueSpice\Calumma\Panel\PanelContainer;
 use BlueSpice\UserSidebar\SidebarParser;
@@ -20,7 +21,7 @@ class UserSidebarNav extends PanelContainer {
 		$this->widgetRegistry = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceUserSidebarWidgets' );
 		$this->sidebarParser = new SidebarParser( $this->userSidebarTitle, $this->widgetRegistry );
 
-		$this->linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
+		$this->linkRenderer = Services::getInstance()->getLinkRenderer();
 	}
 
 	public function getBody() {
