@@ -4,15 +4,18 @@ namespace BlueSpice\UserSidebar\Panel;
 
 use BlueSpice\Calumma\IPanel;
 use BlueSpice\Calumma\Panel\BasePanel;
+use Skins\Chameleon\IdRegistry;
 
 class CollapsibleLinks extends BasePanel implements IPanel {
 	protected $section;
 	protected $links = [];
+	protected $sectionId;
 
-	public function __construct( $skintemplate, $section, $links ) {
+	public function __construct( $skintemplate, $section, $links, $sectionId ) {
 		parent::__construct( $skintemplate );
 		$this->section = $section;
 		$this->links = $links;
+		$this->sectionId = $sectionId;
 	}
 
 	/**
@@ -29,5 +32,40 @@ class CollapsibleLinks extends BasePanel implements IPanel {
 		$linkListGroup = new \BlueSpice\Calumma\Components\SimpleLinkListGroup( $this->links );
 
 		return $linkListGroup->getHtml();
+	}
+
+	/**
+	 *
+	 * @var string
+	 */
+	protected $htmlId = null;
+
+	/**
+	 * The HTML ID for thie component
+	 * @return string
+	 */
+	public function getHtmlId() {
+		if ( $this->htmlId === null ) {
+			$this->htmlId = IdRegistry::getRegistry()->getId( $this->sectionId );
+		}
+		return $this->htmlId;
+	}
+
+	/**
+	 *
+	 * @return bool
+	 */
+	public function getPanelCollapseState() {
+		$htmlId = $this->htmlId;
+
+		$cookieName = $this->getCookiePrefix() . $htmlId;
+		$skin = $this->skintemplate->getSkin();
+		$cookie = $skin->getRequest()->getCookie( $cookieName );
+
+		if ( $cookie === 'true' ) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
