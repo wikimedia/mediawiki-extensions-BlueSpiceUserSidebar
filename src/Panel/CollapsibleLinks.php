@@ -2,6 +2,7 @@
 
 namespace BlueSpice\UserSidebar\Panel;
 
+use QuickTemplate;
 use BlueSpice\Calumma\IPanel;
 use BlueSpice\Calumma\Panel\BasePanel;
 use Skins\Chameleon\IdRegistry;
@@ -11,7 +12,7 @@ class CollapsibleLinks extends BasePanel implements IPanel {
 	protected $links = [];
 	protected $sectionId;
 
-	public function __construct( $skintemplate, $section, $links, $sectionId ) {
+	public function __construct( QuickTemplate $skintemplate, $section, $links, $sectionId ) {
 		parent::__construct( $skintemplate );
 		$this->section = $section;
 		$this->links = $links;
