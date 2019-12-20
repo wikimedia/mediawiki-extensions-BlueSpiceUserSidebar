@@ -8,11 +8,35 @@ class SidebarParser {
 	const WIDGET = 'widget';
 	const SECTION = 'section';
 
+	/**
+	 *
+	 * @var \Title
+	 */
 	protected $title;
+
+	/**
+	 *
+	 * @var array
+	 */
 	protected $widgetRegistry;
+
+	/**
+	 *
+	 * @var array
+	 */
 	protected $textLines = [];
+
+	/**
+	 *
+	 * @var array
+	 */
 	protected $links = [];
 
+	/**
+	 *
+	 * @param \Title $title
+	 * @param array $widgetRegistry
+	 */
 	public function __construct( \Title $title, $widgetRegistry ) {
 		$this->title = $title;
 		$this->widgetRegistry = $widgetRegistry;
@@ -23,10 +47,18 @@ class SidebarParser {
 		$this->parseInternaly();
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getItems() {
 		return $this->links;
 	}
 
+	/**
+	 *
+	 * @return array|null
+	 */
 	protected function getPageTextLines() {
 		if ( $this->title->exists() === false ) {
 			return [];
@@ -81,6 +113,11 @@ class SidebarParser {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $line
+	 * @return array
+	 */
 	protected function parseInternalLink( $line ) {
 		$item = [];
 		$line = ltrim( $line, '[[' );
@@ -107,6 +144,11 @@ class SidebarParser {
 		return $item;
 	}
 
+	/**
+	 *
+	 * @param string $line
+	 * @return array|false
+	 */
 	protected function parseExternalLink( $line ) {
 		$item = [];
 		if ( strpos( $line, '[' ) === 0 ) {
@@ -132,10 +174,20 @@ class SidebarParser {
 		return $item;
 	}
 
+	/**
+	 *
+	 * @param string $line
+	 * @return array|false
+	 */
 	protected function parseWidget( $line ) {
 		return $this->parseWidgetLine( $line );
 	}
 
+	/**
+	 *
+	 * @param string $line
+	 * @return string
+	 */
 	protected function getLineType( $line ) {
 		if ( substr( $line, 0, 1 ) === '[' ) {
 			if ( substr( $line, 0, 2 ) === '[[' ) {
@@ -164,6 +216,11 @@ class SidebarParser {
 		return self::SECTION;
 	}
 
+	/**
+	 *
+	 * @param string $line
+	 * @return array|false
+	 */
 	protected function parseWidgetLine( $line ) {
 		if ( substr( $line, 0, 1 ) === '[' ) {
 			return false;
