@@ -9,6 +9,12 @@ class CollapsibleLinks extends BasePanel implements IPanel {
 	protected $section;
 	protected $links = [];
 
+	/**
+	 *
+	 * @param QuickTemplate $skintemplate
+	 * @param string $section
+	 * @param array $links
+	 */
 	public function __construct( $skintemplate, $section, $links ) {
 		parent::__construct( $skintemplate );
 		$this->section = $section;

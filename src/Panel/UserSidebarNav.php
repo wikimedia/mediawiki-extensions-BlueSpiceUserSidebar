@@ -2,6 +2,8 @@
 
 namespace BlueSpice\UserSidebar\Panel;
 
+use Message;
+use QuickTemplate;
 use BlueSpice\Calumma\IPanel;
 use BlueSpice\Calumma\Panel\PanelContainer;
 use BlueSpice\UserSidebar\SidebarParser;
@@ -12,23 +14,37 @@ class UserSidebarNav extends PanelContainer {
 	protected $userSidebarTitle;
 	protected $linkRenderer;
 
+	/**
+	 *
+	 * @param QuickTemplate $skintemplate
+	 */
 	public function __construct( $skintemplate ) {
 		parent::__construct( $skintemplate );
 		$user = $this->skintemplate->getSkin()->getUser();
 		$this->userSidebarTitle = \Title::makeTitle( NS_USER, $user->getName() . '/Sidebar' );
 
-		$this->widgetRegistry = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceUserSidebarWidgets' );
+		$this->widgetRegistry = \ExtensionRegistry::getInstance()->getAttribute(
+			'BlueSpiceUserSidebarWidgets'
+		);
 		$this->sidebarParser = new SidebarParser( $this->userSidebarTitle, $this->widgetRegistry );
 
 		$this->linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getBody() {
 		$html = parent::getBody();
 		$html .= $this->getEditLink();
 		return $html;
 	}
 
+	/**
+	 *
+	 * @return \BlueSpice\UserSidebar\Panel\CollapsibleLinks[]
+	 */
 	protected function makePanels() {
 		if ( $this->userSidebarTitle->exists() ) {
 			$this->sidebarParser->parse();
@@ -63,14 +79,27 @@ class UserSidebarNav extends PanelContainer {
 		return $panels;
 	}
 
+	/**
+	 *
+	 * @return Message
+	 */
 	public function getTitleMessage() {
 		return wfMessage( 'bs-usersidebar-nav-title' );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getHtmlId() {
 		return 'bs-nav-section-bs-usersidebar';
 	}
 
+	/**
+	 *
+	 * @param string $name
+	 * @return bool
+	 */
 	protected function isWidget( $name ) {
 		if ( isset( $this->widgetRegistry[$name] ) ) {
 			return true;
@@ -78,6 +107,10 @@ class UserSidebarNav extends PanelContainer {
 		return false;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getWidgets() {
 		$widgets = [];
 		foreach ( $this->widgetRegistry as $key => $config ) {
@@ -88,6 +121,10 @@ class UserSidebarNav extends PanelContainer {
 		return $widgets;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getEditLink() {
 		$text = \Html::element(
 					'span',
