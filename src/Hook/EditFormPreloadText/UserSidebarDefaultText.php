@@ -6,6 +6,10 @@ use BlueSpice\Hook\EditFormPreloadText;
 
 class UserSidebarDefaultText extends EditFormPreloadText {
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function skipProcessing() {
 		$user = $this->getContext()->getUser();
 		$userPage = \Title::makeTitle( NS_USER, $user->getName() . "/Sidebar" );
@@ -15,13 +19,23 @@ class UserSidebarDefaultText extends EditFormPreloadText {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function doProcess() {
 		$this->text = implode( "\n", $this->getWidgetLinks() );
 		return true;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getWidgetLinks() {
-		$widgetRegistry = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceUserSidebarWidgets' );
+		$widgetRegistry = \ExtensionRegistry::getInstance()->getAttribute(
+			'BlueSpiceUserSidebarWidgets'
+		);
 		$widgets = [];
 		foreach ( $widgetRegistry as $key => $config ) {
 			if ( !$config['default'] ) {
