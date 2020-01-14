@@ -2,12 +2,12 @@
 
 namespace BlueSpice\UserSidebar\Panel;
 
-use Message;
-use QuickTemplate;
-use BlueSpice\Services;
 use BlueSpice\Calumma\IPanel;
 use BlueSpice\Calumma\Panel\PanelContainer;
+use BlueSpice\Services;
 use BlueSpice\UserSidebar\SidebarParser;
+use Message;
+use QuickTemplate;
 
 class UserSidebarNav extends PanelContainer {
 

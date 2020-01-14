@@ -2,9 +2,9 @@
 
 namespace BlueSpice\UserSidebar\Panel;
 
-use QuickTemplate;
 use BlueSpice\Calumma\IPanel;
 use BlueSpice\Calumma\Panel\BasePanel;
+use QuickTemplate;
 use Skins\Chameleon\IdRegistry;
 
 class CollapsibleLinks extends BasePanel implements IPanel {
