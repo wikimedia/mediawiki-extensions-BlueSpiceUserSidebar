@@ -1,12 +1,12 @@
 <?php
 
-namespace BlueSpice\UserSidebar\Hook\SkinTemplateOutputPageBeforeExec;
+namespace BlueSpice\UserSidebar\Hook\ChameleonSkinTemplateOutputPageBeforeExec;
 
-use BlueSpice\Hook\SkinTemplateOutputPageBeforeExec;
+use BlueSpice\Calumma\Hook\ChameleonSkinTemplateOutputPageBeforeExec;
 use BlueSpice\SkinData;
 use BlueSpice\UserSidebar\Panel\UserSidebarNav;
 
-class AddUserSidebar extends SkinTemplateOutputPageBeforeExec {
+class AddUserSidebar extends ChameleonSkinTemplateOutputPageBeforeExec {
 
 	protected function skipProcessing() {
 		return $this->getContext()->getUser()->isAnon();

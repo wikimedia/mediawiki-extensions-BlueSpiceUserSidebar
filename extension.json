@@ -46,7 +46,7 @@
 	},
 	"Hooks": {
 		"BeforePageDisplay": "\\BlueSpice\\UserSidebar\\Hook\\BeforePageDisplay\\AddStyles::callback",
-		"SkinTemplateOutputPageBeforeExec": "\\BlueSpice\\UserSidebar\\Hook\\SkinTemplateOutputPageBeforeExec\\AddUserSidebar::callback",
+		"ChameleonSkinTemplateOutputPageBeforeExec": "\\BlueSpice\\UserSidebar\\Hook\\ChameleonSkinTemplateOutputPageBeforeExec\\AddUserSidebar::callback",
 		"EditFormPreloadText": [
 			"\\BlueSpice\\UserSidebar\\Hook\\EditFormPreloadText\\UserSidebarDefaultText::callback"
 		]
