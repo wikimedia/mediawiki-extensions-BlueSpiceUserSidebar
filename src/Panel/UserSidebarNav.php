@@ -4,8 +4,8 @@ namespace BlueSpice\UserSidebar\Panel;
 
 use BlueSpice\Calumma\IPanel;
 use BlueSpice\Calumma\Panel\PanelContainer;
-use BlueSpice\Services;
 use BlueSpice\UserSidebar\SidebarParser;
+use MediaWiki\MediaWikiServices;
 use Message;
 use QuickTemplate;
 
@@ -29,7 +29,7 @@ class UserSidebarNav extends PanelContainer {
 		);
 		$this->sidebarParser = new SidebarParser( $this->userSidebarTitle, $this->widgetRegistry );
 
-		$this->linkRenderer = Services::getInstance()->getLinkRenderer();
+		$this->linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 	}
 
 	/**
