@@ -25,7 +25,7 @@ class AddUserSidebar extends ChameleonSkinTemplateOutputPageBeforeExec {
 			[
 				'bs-usersidebar' => [
 					'position' => 30,
-					'callback' => function ( $sktemplate ) {
+					'callback' => static function ( $sktemplate ) {
 						return new UserSidebarNav( $sktemplate );
 					}
 				]
