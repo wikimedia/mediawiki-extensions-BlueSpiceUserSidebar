@@ -3,10 +3,10 @@
 namespace BlueSpice\UserSidebar;
 
 class SidebarParser {
-	const LINK_INTERNAL = 'internal';
-	const LINK_EXTERNAL = 'external';
-	const WIDGET = 'widget';
-	const SECTION = 'section';
+	public const LINK_INTERNAL = 'internal';
+	public const LINK_EXTERNAL = 'external';
+	public const WIDGET = 'widget';
+	public const SECTION = 'section';
 
 	/**
 	 *
