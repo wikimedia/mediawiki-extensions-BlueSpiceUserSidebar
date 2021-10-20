@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"McDutchie"
+			"McDutchie",
+			"Romaine"
 		]
 	},
-	"bs-usersidebar-desc": "Aanpasbaar persoonlijk navigatiemenu"
+	"bs-usersidebar-desc": "Aanpasbaar persoonlijk navigatiemenu",
+	"bs-usersidebar-nav-title": "Persoonlijke navigatie",
+	"bs-edit-user-sidebar-link-text": "Zijbalk bewerken",
+	"bs-edit-user-sidebar-link-title": "Zijbalk bewerken"
 }
