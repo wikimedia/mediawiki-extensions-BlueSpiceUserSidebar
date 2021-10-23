@@ -6,6 +6,10 @@
 	"extra": {
 		"installer-name": "BlueSpiceUserSidebar"
 	},
+	"require": {
+		"composer/installers": "~1.0",
+		"mwstake/mediawiki-component-manifestregistry": "~1.0"
+	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "31.0.0",
 		"mediawiki/minus-x": "1.1.0",

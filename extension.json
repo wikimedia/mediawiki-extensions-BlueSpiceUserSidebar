@@ -18,7 +18,8 @@
 			}
 		},
 		"BlueSpiceUserSidebar": {
-			"Widgets": {}
+			"Widgets": {},
+			"WidgetRegistry": {}
 		}
 	},
 	"requires": {
@@ -27,6 +28,9 @@
 			"BlueSpiceFoundation": ">= 4.0"
 		}
 	},
+	"ServiceWiringFiles": [
+		"includes/ServiceWiring.php"
+	],
 	"MessagesDirs": {
 		"BlueSpiceUserSidebar": "i18n"
 	},
@@ -44,12 +48,18 @@
 		"localBasePath": "resources",
 		"remoteExtPath": "BlueSpiceUserSidebar/resources"
 	},
+	"HookHandlers": {
+		"common-user-interface": {
+			"class": "\\BlueSpice\\UserSidebar\\HookHandler\\CommonUserInterface"
+		}
+	},
 	"Hooks": {
 		"BeforePageDisplay": "\\BlueSpice\\UserSidebar\\Hook\\BeforePageDisplay\\AddStyles::callback",
 		"ChameleonSkinTemplateOutputPageBeforeExec": "\\BlueSpice\\UserSidebar\\Hook\\ChameleonSkinTemplateOutputPageBeforeExec\\AddUserSidebar::callback",
 		"EditFormPreloadText": [
 			"\\BlueSpice\\UserSidebar\\Hook\\EditFormPreloadText\\UserSidebarDefaultText::callback"
-		]
+		],
+		"MWStakeCommonUIRegisterSkinSlotComponents": "common-user-interface"
 	},
 	"manifest_version": 2
 }

@@ -2,6 +2,10 @@
 
 namespace BlueSpice\UserSidebar;
 
+/**
+ * DEPRECATED
+ * @deprecated since version 4.1 - Support ends with BlueSpiceCalumma
+ */
 class SidebarParser {
 	public const LINK_INTERNAL = 'internal';
 	public const LINK_EXTERNAL = 'external';
@@ -42,16 +46,23 @@ class SidebarParser {
 		$this->widgetRegistry = $widgetRegistry;
 	}
 
+	/**
+	 * DEPRECATED
+	 * @deprecated since version 4.1 - Support ends with BlueSpiceCalumma
+	 */
 	public function parse() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->getPageTextLines();
 		$this->parseInternaly();
 	}
 
 	/**
-	 *
+	 * DEPRECATED
+	 * @deprecated since version 4.1 - Support ends with BlueSpiceCalumma
 	 * @return array
 	 */
 	public function getItems() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return $this->links;
 	}
 
