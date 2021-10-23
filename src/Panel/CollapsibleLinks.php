@@ -7,9 +7,25 @@ use BlueSpice\Calumma\Panel\BasePanel;
 use QuickTemplate;
 use Skins\Chameleon\IdRegistry;
 
+/**
+ * DEPRECATED!
+ * @deprecated since version 4.1 - Support ends with BlueSpiceCalumma
+ */
 class CollapsibleLinks extends BasePanel implements IPanel {
+	/**
+	 *
+	 * @var string
+	 */
 	protected $section;
+	/**
+	 *
+	 * @var array
+	 */
 	protected $links = [];
+	/**
+	 *
+	 * @var string
+	 */
 	protected $sectionId;
 
 	/**

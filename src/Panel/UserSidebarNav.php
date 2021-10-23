@@ -5,14 +5,31 @@ namespace BlueSpice\UserSidebar\Panel;
 use BlueSpice\Calumma\IPanel;
 use BlueSpice\Calumma\Panel\PanelContainer;
 use BlueSpice\UserSidebar\SidebarParser;
+use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
 use Message;
 use QuickTemplate;
 
+/**
+ * DEPRECATED
+ * @deprecated since version 4.1 - Support ends with BlueSpiceCalumma
+ */
 class UserSidebarNav extends PanelContainer {
 
+	/**
+	 *
+	 * @var SidebarParser
+	 */
 	protected $sidebarParser;
+	/**
+	 *
+	 * @var Title
+	 */
 	protected $userSidebarTitle;
+	/**
+	 *
+	 * @var LinkRenderer
+	 */
 	protected $linkRenderer;
 
 	/**

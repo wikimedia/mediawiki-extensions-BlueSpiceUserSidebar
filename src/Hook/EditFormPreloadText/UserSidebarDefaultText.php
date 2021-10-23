@@ -33,6 +33,24 @@ class UserSidebarDefaultText extends EditFormPreloadText {
 	 * @return array
 	 */
 	protected function getWidgetLinks() {
+		if ( $this->getContext()->getSkin()->getSkinName() === 'bluespicecalumma' ) {
+			return $this->getLegacyWidgetLinks();
+		}
+		$factory = $this->getServices()->getService( 'BSUserSidebarWidgetFactory' );
+		$widgets = [];
+		foreach ( $factory->getAllKeys() as $key ) {
+			$widgets[] = "* $key";
+		}
+		return $widgets;
+	}
+
+	/**
+	 * DEPRECATED
+	 * @deprecated since version 4.1 - - Support ends with BlueSpiceCalumma
+	 * @return array
+	 */
+	private function getLegacyWidgetLinks() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$widgetRegistry = \ExtensionRegistry::getInstance()->getAttribute(
 			'BlueSpiceUserSidebarWidgets'
 		);
@@ -45,4 +63,5 @@ class UserSidebarDefaultText extends EditFormPreloadText {
 		}
 		return $widgets;
 	}
+
 }
