@@ -3,7 +3,7 @@
 namespace BlueSpice\UserSidebar\Component\SimpleCard;
 
 use IContextSource;
-use MediaWiki\Linker;
+use Linker;
 use MWStake\MediaWiki\Component\CommonUserInterface\Component\Literal;
 use MWStake\MediaWiki\Component\CommonUserInterface\Component\SimpleCard;
 use MWStake\MediaWiki\Component\CommonUserInterface\Component\SimpleCardHeader;
@@ -81,7 +81,10 @@ class PersonalMenu extends SimpleCard {
 			new SimpleLinklistGroupFromArray( [
 				'id' => "umcus-manu-$id-linkgroup",
 				'classes' => [ 'menu-card-body', 'menu-list', 'll-dft' ],
-				'links' => $this->formatLinks( $this->links )
+				'links' => $this->formatLinks( $this->links ),
+				'aria' => [
+					'labelledby' => "umcus-menu-head-$id"
+				]
 			] ),
 		];
 	}
