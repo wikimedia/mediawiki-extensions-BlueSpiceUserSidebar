@@ -3,7 +3,7 @@
 namespace BlueSpice\UserSidebar\Component\SimpleCard;
 
 use IContextSource;
-use Linker;
+use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\CommonUserInterface\Component\Literal;
 use MWStake\MediaWiki\Component\CommonUserInterface\Component\SimpleCard;
 use MWStake\MediaWiki\Component\CommonUserInterface\Component\SimpleCardHeader;
@@ -66,7 +66,9 @@ class PersonalMenu extends SimpleCard {
 	 * @inheritDoc
 	 */
 	public function getSubComponents(): array {
-		$id = Sanitizer::escapeIdForAttribute( $this->section );
+		$id = strtolower( Sanitizer::escapeIdForAttribute( $this->section ) );
+		$services = MediaWikiServices::getInstance();
+		$linkFormatter = $services->getService( 'MWStakeLinkFormatter' );
 		return [
 			new SimpleCardHeader( [
 				'id' => "umcus-menu-head-$id",
@@ -81,75 +83,11 @@ class PersonalMenu extends SimpleCard {
 			new SimpleLinklistGroupFromArray( [
 				'id' => "umcus-manu-$id-linkgroup",
 				'classes' => [ 'menu-card-body', 'menu-list', 'll-dft' ],
-				'links' => $this->formatLinks( $this->links ),
+				'links' => $linkFormatter->formatLinks( $this->links ),
 				'aria' => [
 					'labelledby' => "umcus-menu-head-$id"
 				]
 			] ),
 		];
-	}
-
-	/**
-	 * @param array $links
-	 * @return array
-	 */
-	private function formatLinks( $links ): array {
-		$params = [];
-
-		foreach ( $links as $key => $link ) {
-			if ( is_string( $key ) ) {
-				$strpos = strpos( $key, '-' );
-				$subKey = substr( $key, $strpos + 1 );
-			}
-
-			if ( isset( $link['text'] ) && $link['text'] !== '' ) {
-				$msg = $this->context->msg( $link['text'] );
-				if ( $msg->exists() ) {
-					$link['text'] = $msg->text();
-				}
-			} elseif ( isset( $link['msg'] ) && $link['msg'] === '' ) {
-				$msg = $this->context->msg( $link['msg'] );
-				if ( $msg->exists() ) {
-					$link['text'] = $msg->text();
-				}
-			} elseif ( is_string( $key ) && $this->context->msg( $key )->exists() ) {
-				$msg = $this->context->msg( $key );
-				$link['text'] = $msg->text();
-			} elseif ( is_string( $key ) && $this->context->msg( $subKey )->exists() ) {
-				$msg = $this->context->msg( $subKey );
-				$link['text'] = $msg->text();
-			} else {
-				continue;
-			}
-
-			if ( isset( $link['title'] ) && $link['title'] !== '' ) {
-				$msg = $this->context->msg( $link['title'] );
-				if ( $msg->exists() ) {
-					$link['title'] = $msg->text();
-				}
-			} elseif ( is_string( $key ) && $this->context->msg( $key )->exists() ) {
-				$msg = $this->context->msg( $key );
-				if ( $msg->exists() ) {
-					$link['title'] = $msg->text();
-				}
-			} elseif ( isset( $link['id'] ) && $link['id'] !== '' ) {
-				$tooltip = Linker::titleAttrib( $link['id'] );
-				if ( $tooltip ) {
-					$link['title'] = $tooltip;
-				}
-			}
-
-			if ( isset( $link['data-mw'] ) && isset( $link['data'] ) ) {
-				$link['data']['mw'] = $link['data-mw'];
-			} elseif ( isset( $link['data-mw'] ) ) {
-				$link['data'] = [
-					'mw' => $link['data-mw']
-				];
-			}
-
-			$params[] = $link;
-		}
-
-		return $params;
 	}
 }
