@@ -42,6 +42,11 @@
 			"styles": [
 				"ext.blueSpiceUserSidebar.less"
 			]
+		},
+		"ext.blueSpice.userSidebar.menu.styles": {
+			"styles": [
+				"ext.blueSpiceUserSidebar.menu-styles.css"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {

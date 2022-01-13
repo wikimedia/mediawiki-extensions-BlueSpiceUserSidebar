@@ -2,6 +2,7 @@
 
 namespace BlueSpice\UserSidebar\HookHandler;
 
+use BlueSpice\UserSidebar\Component\EditPersonalMenu;
 use BlueSpice\UserSidebar\Component\SimpleCard\PersonalMenu;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\CommonUserInterface\Hook\MWStakeCommonUIRegisterSkinSlotComponents;
@@ -50,6 +51,17 @@ class CommonUserInterface implements MWStakeCommonUIRegisterSkinSlotComponents {
 				]
 			);
 		}
+		$registry->register(
+			'UserMenuCards',
+			[
+				"umc-edit-link" => [
+					'factory' => static function ()
+						use ( $userSidebarTitle ) {
+						return new EditPersonalMenu( $userSidebarTitle );
+					}
+				]
+			]
+		);
 	}
 
 	/**
