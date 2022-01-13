@@ -1,0 +1,11 @@
+#mm-usersidebar-edit {
+	font-size: 14px;
+	right: 0;
+	top: 1rem;
+	position: absolute;
+	margin-right: 2rem;
+	color: var(--link-fg);
+}
+#mm-usersidebar-edit:hover {
+	color: inherit;
+}
