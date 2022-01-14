@@ -56,21 +56,21 @@ class EditPersonalMenu extends RestrictedTextLink {
 	 * @return Message
 	 */
 	public function getText(): Message {
-		return Message::newFromKey( 'bs-edit-user-sidebar-link-text' );
+		return Message::newFromKey( 'bs-edit-user-mm-link-text' );
 	}
 
 	/**
 	 * @return Message
 	 */
 	public function getTitle(): Message {
-		return Message::newFromKey( 'bs-edit-user-sidebar-link-title' );
+		return Message::newFromKey( 'bs-edit-user-mm-link-title' );
 	}
 
 	/**
 	 * @return Message
 	 */
 	public function getAriaLabel(): Message {
-		return Message::newFromKey( 'bs-edit-user-sidebar-link-text' );
+		return Message::newFromKey( 'bs-edit-user-mm-link-text' );
 	}
 
 }
