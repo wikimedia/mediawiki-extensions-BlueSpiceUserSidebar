@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"GraceL",
 			"Liuxinyu970226",
 			"Zazzzz",
 			"佛壁灯"
@@ -9,5 +10,7 @@
 	"bs-usersidebar-desc": "自定义个人导航菜单",
 	"bs-usersidebar-nav-title": "个人导航菜单",
 	"bs-edit-user-sidebar-link-text": "编辑侧边栏",
-	"bs-edit-user-sidebar-link-title": "编辑侧边栏"
+	"bs-edit-user-sidebar-link-title": "编辑侧边栏",
+	"bs-edit-user-mm-link-text": "编辑用户菜单",
+	"bs-edit-user-mm-link-title": "编辑用户菜单"
 }
