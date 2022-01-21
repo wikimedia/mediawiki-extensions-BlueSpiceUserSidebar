@@ -165,7 +165,10 @@ class Parser {
 			return [];
 		}
 
-		$item['href'] = $title->getFullURL();
+		$item['href'] = $title->getLocalURL();
+		if ( $title->hasFragment() ) {
+			$item['href'] .= $title->getFragmentForURL();
+		}
 
 		if ( isset( $elements[1] ) ) {
 			$item['text'] = $elements[1];
