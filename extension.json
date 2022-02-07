@@ -28,6 +28,7 @@
 			"BlueSpiceFoundation": ">= 4.1"
 		}
 	},
+	"callback": "mwsInitComponents",
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
 	],
