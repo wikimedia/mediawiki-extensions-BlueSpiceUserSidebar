@@ -2,11 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Piramidion",
-			"Ата"
+			"Ата",
+			"Samflint"
 		]
 	},
 	"bs-usersidebar-desc": "Налаштовне персональне меню навігації",
 	"bs-usersidebar-nav-title": "Персональна навігація",
 	"bs-edit-user-sidebar-link-text": "Редагувати бічну панель",
-	"bs-edit-user-sidebar-link-title": "Редагувати бічну панель"
+	"bs-edit-user-sidebar-link-title": "Редагувати бічну панель",
+	"bs-edit-user-mm-link-text": "Редагувати меню користувача",
+	"bs-edit-user-mm-link-title": "Редагувати меню користувача"
 }
