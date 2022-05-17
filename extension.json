@@ -20,6 +20,16 @@
 		"BlueSpiceUserSidebar": {
 			"Widgets": {},
 			"WidgetRegistry": {}
+		},
+		"MenuEditor": {
+			"Menus": {
+				"user-sidebar": {
+					"class": "BlueSpice\\UserSidebar\\Menu\\UserSidebar",
+					"services": [
+						"HookContainer", "BSUserSidebarWidgetFactory"
+					]
+				}
+			}
 		}
 	},
 	"requires": {
@@ -47,6 +57,14 @@
 		"ext.blueSpice.userSidebar.menu.styles": {
 			"styles": [
 				"ext.blueSpiceUserSidebar.menu-styles.css"
+			]
+		},
+		"ext.blueSpice.userSidebar.menu": {
+			"scripts": [
+				"menu/UserSidebarTree.js"
+			],
+			"dependencies": [
+				"ext.menuEditor.tree"
 			]
 		}
 	},
