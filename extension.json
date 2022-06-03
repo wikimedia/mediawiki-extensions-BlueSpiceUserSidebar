@@ -80,6 +80,7 @@
 	"Hooks": {
 		"BeforePageDisplay": "\\BlueSpice\\UserSidebar\\Hook\\BeforePageDisplay\\AddStyles::callback",
 		"ChameleonSkinTemplateOutputPageBeforeExec": "\\BlueSpice\\UserSidebar\\Hook\\ChameleonSkinTemplateOutputPageBeforeExec\\AddUserSidebar::callback",
+		"BSUsageTrackerRegisterCollectors": "\\BlueSpice\\UserSidebar\\Hook\\BSUsageTrackerRegisterCollectors\\NoOfUserSidebars::callback",
 		"EditFormPreloadText": [
 			"\\BlueSpice\\UserSidebar\\Hook\\EditFormPreloadText\\UserSidebarDefaultText::callback"
 		],
