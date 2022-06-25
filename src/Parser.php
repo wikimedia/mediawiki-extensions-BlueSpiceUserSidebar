@@ -3,9 +3,9 @@
 namespace BlueSpice\UserSidebar;
 
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 use Title;
 use TitleFactory;
-use WikiPage;
 
 class Parser {
 	/**
@@ -78,7 +78,7 @@ class Parser {
 	 * @return string
 	 */
 	protected function getContent( Title $title ) {
-		$wikiPage = WikiPage::factory( $title );
+		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = $wikiPage->getContent()->getNativeData();
 		return preg_replace( '#<noinclude>.*?<\/noinclude>#si', '', $content );
 	}
