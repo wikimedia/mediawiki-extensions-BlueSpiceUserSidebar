@@ -74,7 +74,7 @@ class SidebarParser {
 		if ( $this->title->exists() === false ) {
 			return [];
 		}
-		$wikiPage = \WikiPage::factory( $this->title );
+		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $this->title );
 		$content = $wikiPage->getContent()->getNativeData();
 
 		$content = preg_replace( '#<noinclude>.*?<\/noinclude>#si', '', $content );
