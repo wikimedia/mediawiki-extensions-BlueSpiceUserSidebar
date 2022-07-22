@@ -3,21 +3,18 @@
 namespace BlueSpice\UserSidebar\Menu;
 
 use BlueSpice\UserSidebar\WidgetFactory;
-use MediaWiki\Extension\MenuEditor\Menu\MenuWithActionOverride;
-use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Extension\MenuEditor\IMenu;
 use MWStake\MediaWiki\Component\Wikitext\Node\Menu\Keyword;
 use Title;
 
-class UserSidebar extends MenuWithActionOverride {
+class UserSidebar implements IMenu {
 	/** @var WidgetFactory */
 	private $widgetFactory;
 
 	/**
-	 * @param HookContainer $hookContainer
 	 * @param WidgetFactory $widgetFactory
 	 */
-	public function __construct( HookContainer $hookContainer, WidgetFactory $widgetFactory ) {
-		parent::__construct( $hookContainer );
+	public function __construct( WidgetFactory $widgetFactory ) {
 		$this->widgetFactory = $widgetFactory;
 	}
 
