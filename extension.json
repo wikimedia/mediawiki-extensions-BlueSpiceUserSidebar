@@ -26,8 +26,14 @@
 				"user-sidebar": {
 					"class": "BlueSpice\\UserSidebar\\Menu\\UserSidebar",
 					"services": [
-						"HookContainer", "BSUserSidebarWidgetFactory"
+						"BSUserSidebarWidgetFactory"
 					]
+				}
+			},
+			"Nodes": {
+				"menu-keyword-usersidebar": {
+					"classname": "ext.usersidebar.data.UsersidebarKeywordNode",
+					"module": "ext.blueSpice.userSidebar.data"
 				}
 			}
 		}
@@ -65,6 +71,18 @@
 			],
 			"dependencies": [
 				"ext.menuEditor.tree"
+			]
+		},
+		"ext.blueSpice.userSidebar.data": {
+			"scripts": [
+				"data/UsersidebarKeywordNode.js"
+			],
+			"dependencies": [
+				"ext.menuEditor.node"
+			],
+			"messages": [
+				"menueditor-ui-menu-keyword-usersidebar-label-edit",
+				"menueditor-ui-menu-keyword-usersidebar-label"
 			]
 		}
 	},
