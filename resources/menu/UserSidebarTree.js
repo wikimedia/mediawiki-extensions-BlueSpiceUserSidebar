@@ -13,7 +13,7 @@ ext.usersidebar.menu.UserSidebarTree.prototype.getPossibleNodesForLevel = functi
 		case 0:
 			return [ 'menu-raw-text', 'menu-keyword-usersidebar' ];
 		case 1:
-			return [ 'menu-two-fold-link-spec', 'menu-keyword-usersidebar' ];
+			return [ 'menu-two-fold-link-spec' ];
 		default:
 			return [];
 	}
