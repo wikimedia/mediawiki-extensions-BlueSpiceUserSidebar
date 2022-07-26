@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
+			"Verdy p",
 			"Wladek92"
 		]
 	},
@@ -10,5 +11,7 @@
 	"bs-edit-user-sidebar-link-text": "Modifier la barre latérale",
 	"bs-edit-user-sidebar-link-title": "Modifier la barre latérale",
 	"bs-edit-user-mm-link-text": "Modifier le menu utilisateur",
-	"bs-edit-user-mm-link-title": "Modifier le menu utilisateur"
+	"bs-edit-user-mm-link-title": "Modifier le menu utilisateur",
+	"menueditor-ui-menu-keyword-usersidebar-label-edit": "Modifier le mot-clé",
+	"menueditor-ui-menu-keyword-usersidebar-label": "Mot-clé"
 }
