@@ -9,5 +9,7 @@
 	"bs-edit-user-sidebar-link-text": "Modificar barra lateral",
 	"bs-edit-user-sidebar-link-title": "Modificar barra lateral",
 	"bs-edit-user-mm-link-text": "Modificar le menu del usator",
-	"bs-edit-user-mm-link-title": "Modificar le menu del usator"
+	"bs-edit-user-mm-link-title": "Modificar le menu del usator",
+	"menueditor-ui-menu-keyword-usersidebar-label-edit": "Modificar parola-clave",
+	"menueditor-ui-menu-keyword-usersidebar-label": "Parola-clave"
 }

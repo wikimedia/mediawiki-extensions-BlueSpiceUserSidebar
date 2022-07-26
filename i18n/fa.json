@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"FarsiNevis"
+			"FarsiNevis",
+			"Jeeputer"
 		]
 	},
 	"bs-edit-user-sidebar-link-text": "ویرایش نوار کناری",
-	"bs-edit-user-sidebar-link-title": "ویرایش نوار کناری"
+	"bs-edit-user-sidebar-link-title": "ویرایش نوار کناری",
+	"menueditor-ui-menu-keyword-usersidebar-label-edit": "ویرایش کلیدواژه",
+	"menueditor-ui-menu-keyword-usersidebar-label": "کلیدواژه"
 }
