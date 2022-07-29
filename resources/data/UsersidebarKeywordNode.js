@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-global-assign
 ext = ext || {};
 ext.usersidebar = ext.usersidebar || {};
 ext.usersidebar.data = {};
@@ -6,7 +7,8 @@ ext.usersidebar.data.UsersidebarKeywordNode = function ( cfg ) {
 	ext.usersidebar.data.UsersidebarKeywordNode.parent.call( this, cfg );
 };
 
-OO.inheritClass( ext.usersidebar.data.UsersidebarKeywordNode, ext.menueditor.ui.data.node.KeywordNode );
+OO.inheritClass( ext.usersidebar.data.UsersidebarKeywordNode,
+	ext.menueditor.ui.data.node.KeywordNode );
 
 ext.usersidebar.data.UsersidebarKeywordNode.prototype.getFormFields = function () {
 	return [
