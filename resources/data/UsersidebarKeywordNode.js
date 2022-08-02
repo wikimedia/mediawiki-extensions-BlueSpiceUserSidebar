@@ -5,6 +5,17 @@ ext.usersidebar.data = {};
 
 ext.usersidebar.data.UsersidebarKeywordNode = function ( cfg ) {
 	ext.usersidebar.data.UsersidebarKeywordNode.parent.call( this, cfg );
+
+	var config = require( './config.json' );
+	var keywords = config.allowedUserSidebarKeywords;
+
+	this.options = [];
+	for ( var i = 0; i < keywords.length; i++ ) {
+		var object = {
+			data: keywords[ i ]
+		};
+		this.options.push( object );
+	}
 };
 
 OO.inheritClass( ext.usersidebar.data.UsersidebarKeywordNode,
@@ -15,10 +26,7 @@ ext.usersidebar.data.UsersidebarKeywordNode.prototype.getFormFields = function (
 		{
 			name: 'keyword',
 			type: 'dropdown',
-			options: [
-				{ data: 'PAGESVISITED' },
-				{ data: 'YOUREDITS' }
-			],
+			options: this.options,
 			// eslint-disable-next-line camelcase
 			widget_$overlay: true,
 			required: true,
