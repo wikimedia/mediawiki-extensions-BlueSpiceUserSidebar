@@ -31,7 +31,7 @@
 				}
 			},
 			"Nodes": {
-				"menu-keyword-usersidebar": {
+				"menu-user-sidebar-keyword": {
 					"classname": "ext.usersidebar.data.UsersidebarKeywordNode",
 					"module": "ext.blueSpice.userSidebar.data"
 				}
@@ -44,7 +44,7 @@
 			"BlueSpiceFoundation": ">= 4.0"
 		}
 	},
-	"callback": "mwsInitComponents",
+	"callback": "\\BlueSpice\\UserSidebar\\Extension::onRegistry",
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
 	],
@@ -74,15 +74,21 @@
 			]
 		},
 		"ext.blueSpice.userSidebar.data": {
-			"scripts": [
-				"data/UsersidebarKeywordNode.js"
+			"packageFiles": [
+				"data/UsersidebarKeywordNode.js",
+				{
+					"name": "data/config.json",
+					"callback": "\\BlueSpice\\UserSidebar\\ClientConfig::makeConfigJson"
+				}
 			],
 			"dependencies": [
 				"ext.menuEditor.node"
 			],
 			"messages": [
 				"menueditor-ui-menu-keyword-usersidebar-label-edit",
-				"menueditor-ui-menu-keyword-usersidebar-label"
+				"menueditor-ui-menu-keyword-usersidebar-label",
+				"menueditor-ui-menu-user-sidebar-keyword-label-edit",
+				"menueditor-ui-menu-user-sidebar-keyword-label"
 			]
 		}
 	},
@@ -103,6 +109,11 @@
 			"\\BlueSpice\\UserSidebar\\Hook\\EditFormPreloadText\\UserSidebarDefaultText::callback"
 		],
 		"MWStakeCommonUIRegisterSkinSlotComponents": "common-user-interface"
+	},
+	"config": {
+		"MenuEditorUserSidebarAllowedKeywords": {
+			"value": [ "PAGESVISITED", "YOUREDITS" ]
+		}
 	},
 	"manifest_version": 2
 }
