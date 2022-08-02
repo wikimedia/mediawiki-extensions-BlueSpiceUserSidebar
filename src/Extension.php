@@ -29,10 +29,27 @@
 
 namespace BlueSpice\UserSidebar;
 
+use MWStake\MediaWiki\Component\Wikitext\NodeProcessor\Menu\GenericKeywordNodeProcessor;
+
 /**
  * Base class for UserSidebar extension
  * @package BlueSpice_Extensions
  * @subpackage UserSidebar
  */
 class Extension extends \BlueSpice\Extension {
+
+	public static function onRegistry() {
+		mwsInitComponents();
+
+		$GLOBALS['mwsgWikitextNodeProcessorRegistry'] += [
+			"menu-user-sidebar-keyword" => [
+				"factory" => static function () {
+					return new GenericKeywordNodeProcessor(
+						'menu-user-sidebar-keyword',
+						[ 'YOUREDITS', 'PAGESVISITED' ]
+					);
+				}
+			]
+		];
+	}
 }
