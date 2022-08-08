@@ -20,3 +20,10 @@ ext.usersidebar.menu.UserSidebarTree.prototype.getPossibleNodesForLevel = functi
 			return [];
 	}
 };
+
+ext.usersidebar.menu.UserSidebarTree.prototype.createItemWidget = function ( item, lvl, isLeaf ) {
+	if ( item.type === 'menu-keyword' ) {
+		item.type = 'menu-keyword-usersidebar';
+	}
+	return ext.usersidebar.menu.UserSidebarTree.super.prototype.createItemWidget.call( this, item, lvl, isLeaf );
+};
