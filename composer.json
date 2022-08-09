@@ -7,7 +7,7 @@
 		"installer-name": "BlueSpiceUserSidebar"
 	},
 	"require": {
-		"composer/installers": "~1.0",
+		"composer/installers": "~1.0|~2",
 		"mwstake/mediawiki-component-manifestregistry": "~2"
 	},
 	"require-dev": {
