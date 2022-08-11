@@ -3,6 +3,7 @@
 namespace BlueSpice\UserSidebar;
 
 use IContextSource;
+use TextContent;
 use Title;
 use TitleFactory;
 use WikiPage;
@@ -79,7 +80,8 @@ class Parser {
 	 */
 	protected function getContent( Title $title ) {
 		$wikiPage = WikiPage::factory( $title );
-		$content = $wikiPage->getContent()->getNativeData();
+		$contentObj = $wikiPage->getContent();
+		$content = ( $contentObj instanceof TextContent ) ? $contentObj->getText() : '';
 		return preg_replace( '#<noinclude>.*?<\/noinclude>#si', '', $content );
 	}
 
