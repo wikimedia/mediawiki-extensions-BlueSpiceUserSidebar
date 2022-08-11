@@ -13,5 +13,7 @@
 	"bs-edit-user-mm-link-text": "Modifier le menu utilisateur",
 	"bs-edit-user-mm-link-title": "Modifier le menu utilisateur",
 	"menueditor-ui-menu-keyword-usersidebar-label-edit": "Modifier le mot-clé",
-	"menueditor-ui-menu-keyword-usersidebar-label": "Mot-clé"
+	"menueditor-ui-menu-keyword-usersidebar-label": "Mot-clé",
+	"menueditor-ui-menu-user-sidebar-keyword-label-edit": "Modifier le mot-clé",
+	"menueditor-ui-menu-user-sidebar-keyword-label": "Mot-clé"
 }
