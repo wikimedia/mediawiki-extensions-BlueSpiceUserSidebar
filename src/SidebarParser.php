@@ -2,6 +2,8 @@
 
 namespace BlueSpice\UserSidebar;
 
+use TextContent;
+
 /**
  * DEPRECATED
  * @deprecated since version 4.1 - Support ends with BlueSpiceCalumma
@@ -74,8 +76,10 @@ class SidebarParser {
 		if ( $this->title->exists() === false ) {
 			return [];
 		}
-		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $this->title );
-		$content = $wikiPage->getContent()->getNativeData();
+
+		$wikiPage = \WikiPage::factory( $this->title );
+		$contentObj = $wikiPage->getContent();
+		$content = ( $contentObj instanceof TextContent ) ? $contentObj->getText() : '';
 
 		$content = preg_replace( '#<noinclude>.*?<\/noinclude>#si', '', $content );
 
