@@ -5,8 +5,13 @@
 			"Jeeputer"
 		]
 	},
+	"bs-usersidebar-nav-title": "ناوبری شخصی",
 	"bs-edit-user-sidebar-link-text": "ویرایش نوار کناری",
 	"bs-edit-user-sidebar-link-title": "ویرایش نوار کناری",
+	"bs-edit-user-mm-link-text": "ویرایش منوی کاربر",
+	"bs-edit-user-mm-link-title": "ویرایش منوی کاربر",
 	"menueditor-ui-menu-keyword-usersidebar-label-edit": "ویرایش کلیدواژه",
-	"menueditor-ui-menu-keyword-usersidebar-label": "کلیدواژه"
+	"menueditor-ui-menu-keyword-usersidebar-label": "کلیدواژه",
+	"menueditor-ui-menu-user-sidebar-keyword-label-edit": "ویرایش کلیدواژه",
+	"menueditor-ui-menu-user-sidebar-keyword-label": "کلیدواژه"
 }
