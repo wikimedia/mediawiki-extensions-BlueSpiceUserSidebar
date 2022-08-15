@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dejan Savuljesku <savuljesku@hallowelt.com>"
+			"Dejan Savuljesku <savuljesku@hallowelt.com>",
+			"Robby"
 		]
 	},
 	"bs-usersidebar-desc": "Description for user siderbar",
@@ -13,5 +14,5 @@
 	"menueditor-ui-menu-keyword-usersidebar-label-edit": "Label for edit keyword in user sidebar keyword node",
 	"menueditor-ui-menu-keyword-usersidebar-label": "Label for usersidebar keyword node",
 	"menueditor-ui-menu-user-sidebar-keyword-label-edit": "Label for edit keyword in menu user sidebar keyword node",
-	"menueditor-ui-menu-user-sidebar-keyword-label": "Label for menu usersidebar keyword node"
+	"menueditor-ui-menu-user-sidebar-keyword-label": "Label for menu usersidebar keyword node\n{{identical|Keyword}}"
 }
