@@ -29,10 +29,11 @@
 
 namespace BlueSpice\UserSidebar;
 
-use MWStake\MediaWiki\Component\Wikitext\NodeProcessor\Menu\GenericKeywordNodeProcessor;
+use MediaWiki\Extension\MenuEditor\NodeProcessor\GenericKeywordNodeProcessor;
 
 /**
  * Base class for UserSidebar extension
+ *
  * @package BlueSpice_Extensions
  * @subpackage UserSidebar
  */
