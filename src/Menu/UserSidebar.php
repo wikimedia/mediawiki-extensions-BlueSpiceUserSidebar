@@ -4,7 +4,7 @@ namespace BlueSpice\UserSidebar\Menu;
 
 use BlueSpice\UserSidebar\WidgetFactory;
 use MediaWiki\Extension\MenuEditor\IMenu;
-use MWStake\MediaWiki\Component\Wikitext\Node\Menu\Keyword;
+use MediaWiki\Extension\MenuEditor\Node\Keyword;
 use Title;
 
 class UserSidebar implements IMenu {
