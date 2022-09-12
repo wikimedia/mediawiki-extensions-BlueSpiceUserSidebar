@@ -76,7 +76,7 @@ class PersonalMenu extends SimpleCard {
 				'items' => [
 					new Literal(
 						"umcus-menu-title-$id",
-						$this->section
+						htmlspecialchars( $this->section )
 					)
 				]
 			] ),
