@@ -3,7 +3,8 @@
 		"authors": [
 			"Piramidion",
 			"Samflint",
-			"Ата"
+			"Ата",
+			"Пан Хаунд"
 		]
 	},
 	"bs-usersidebar-desc": "Налаштовне персональне меню навігації",
@@ -11,5 +12,8 @@
 	"bs-edit-user-sidebar-link-text": "Редагувати бічну панель",
 	"bs-edit-user-sidebar-link-title": "Редагувати бічну панель",
 	"bs-edit-user-mm-link-text": "Редагувати меню користувача",
-	"bs-edit-user-mm-link-title": "Редагувати меню користувача"
+	"bs-edit-user-mm-link-title": "Редагувати меню користувача",
+	"menueditor-ui-menu-keyword-usersidebar-label-edit": "Редагувати ключове слово",
+	"menueditor-ui-menu-keyword-usersidebar-label": "Ключове слово",
+	"menueditor-ui-menu-user-sidebar-keyword-label-edit": "Редагувати ключове слово"
 }
