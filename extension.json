@@ -26,7 +26,7 @@
 				"user-sidebar": {
 					"class": "BlueSpice\\UserSidebar\\Menu\\UserSidebar",
 					"services": [
-						"BSUserSidebarWidgetFactory", "WikitextParserFactory"
+						"BSUserSidebarWidgetFactory", "MWStakeWikitextParserFactory"
 					]
 				}
 			},
