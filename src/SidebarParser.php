@@ -2,6 +2,7 @@
 
 namespace BlueSpice\UserSidebar;
 
+use MediaWiki\MediaWikiServices;
 use TextContent;
 
 /**
@@ -77,7 +78,8 @@ class SidebarParser {
 			return [];
 		}
 
-		$wikiPage = \WikiPage::factory( $this->title );
+		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()
+			->newFromTitle( $this->title );
 		$contentObj = $wikiPage->getContent();
 		$content = ( $contentObj instanceof TextContent ) ? $contentObj->getText() : '';
 
