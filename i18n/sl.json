@@ -2,8 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Dbc334",
+			"Eleassar",
 			"Skalcaa"
 		]
 	},
-	"bs-usersidebar-desc": "Prilagodljiv osebni navigacijski meni"
+	"bs-usersidebar-desc": "Prilagodljiv osebni navigacijski meni",
+	"bs-edit-user-sidebar-link-text": "Uredi stransko letvico",
+	"bs-edit-user-sidebar-link-title": "Urejanje stranske letvice"
 }
