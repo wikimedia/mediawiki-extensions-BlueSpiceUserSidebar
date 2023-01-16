@@ -11,5 +11,9 @@
 	"bs-edit-user-sidebar-link-text": "Editar barra lateral",
 	"bs-edit-user-sidebar-link-title": "Editar barra lateral",
 	"bs-edit-user-mm-link-text": "Editar el menú de usuario",
-	"bs-edit-user-mm-link-title": "Editar el menú de usuario"
+	"bs-edit-user-mm-link-title": "Editar el menú de usuario",
+	"menueditor-ui-menu-keyword-usersidebar-label-edit": "Editar palabra clave",
+	"menueditor-ui-menu-keyword-usersidebar-label": "Palabra clave",
+	"menueditor-ui-menu-user-sidebar-keyword-label-edit": "Editar palabra clave",
+	"menueditor-ui-menu-user-sidebar-keyword-label": "Palabra clave"
 }
