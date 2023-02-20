@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"menueditor-ui-menu-keyword-usersidebar-label-edit": "Խմբագրել հիմնաբառը",
-	"menueditor-ui-menu-keyword-usersidebar-label": "Հիմնաբառ"
+	"menueditor-ui-menu-keyword-usersidebar-label": "Հիմնաբառ",
+	"bs-edit-user-mm-link-text": "Խմբագրել օգտվողի ընտրացանկը",
+	"bs-edit-user-mm-link-title": "Խմբագրել օգտվողի ընտրացանկը"
 }
