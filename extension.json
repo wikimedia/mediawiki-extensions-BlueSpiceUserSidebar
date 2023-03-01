@@ -55,11 +55,6 @@
 		"BlueSpice\\UserSidebar\\": "src/"
 	},
 	"ResourceModules": {
-		"ext.blueSpiceUserSidebar.styles": {
-			"styles": [
-				"ext.blueSpiceUserSidebar.less"
-			]
-		},
 		"ext.blueSpice.userSidebar.menu.styles": {
 			"styles": [
 				"ext.blueSpiceUserSidebar.menu-styles.css"
@@ -102,8 +97,6 @@
 		}
 	},
 	"Hooks": {
-		"BeforePageDisplay": "\\BlueSpice\\UserSidebar\\Hook\\BeforePageDisplay\\AddStyles::callback",
-		"ChameleonSkinTemplateOutputPageBeforeExec": "\\BlueSpice\\UserSidebar\\Hook\\ChameleonSkinTemplateOutputPageBeforeExec\\AddUserSidebar::callback",
 		"BSUsageTrackerRegisterCollectors": "\\BlueSpice\\UserSidebar\\Hook\\BSUsageTrackerRegisterCollectors\\NoOfUserSidebars::callback",
 		"EditFormPreloadText": [
 			"\\BlueSpice\\UserSidebar\\Hook\\EditFormPreloadText\\UserSidebarDefaultText::callback"
