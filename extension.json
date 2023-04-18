@@ -54,6 +54,9 @@
 	"AutoloadNamespaces": {
 		"BlueSpice\\UserSidebar\\": "src/"
 	},
+	"TestAutoloadNamespaces": {
+		"BlueSpice\\UserSidebar\\Tests\\": "tests/phpunit/"
+	},
 	"ResourceModules": {
 		"ext.blueSpice.userSidebar.menu.styles": {
 			"styles": [
