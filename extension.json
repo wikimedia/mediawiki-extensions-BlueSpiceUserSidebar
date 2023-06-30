@@ -58,11 +58,6 @@
 		"BlueSpice\\UserSidebar\\Tests\\": "tests/phpunit/"
 	},
 	"ResourceModules": {
-		"ext.blueSpice.userSidebar.menu.styles": {
-			"styles": [
-				"ext.blueSpiceUserSidebar.menu-styles.css"
-			]
-		},
 		"ext.blueSpice.userSidebar.menu": {
 			"scripts": [
 				"menu/UserSidebarTree.js"

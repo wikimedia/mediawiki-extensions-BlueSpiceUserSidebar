@@ -30,11 +30,18 @@ class EditPersonalMenu extends RestrictedTextLink {
 	}
 
 	/**
+	 * @inheritDoc
+	 */
+	public function getClasses(): array {
+		return [ 'mm-edit-link' ];
+	}
+
+	/**
 	 *
 	 * @inheritDoc
 	 */
 	public function getRequiredRLStyles(): array {
-		return [ "ext.blueSpice.userSidebar.menu.styles" ];
+		return [];
 	}
 
 	/**
