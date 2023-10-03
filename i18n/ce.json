@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"bs-usersidebar-desc": "Нисйан луш йолу навигацин персоналан меню",
+	"bs-usersidebar-nav-title": "Долара навигаци",
+	"bs-edit-user-sidebar-link-text": "Нисйе агӀонгара панель",
+	"bs-edit-user-sidebar-link-title": "Нисйе агӀонгара панель",
+	"menueditor-ui-menu-keyword-usersidebar-label-edit": "Хийца коьрта дош",
+	"menueditor-ui-menu-keyword-usersidebar-label": "Коьрта дош",
+	"menueditor-ui-menu-user-sidebar-keyword-label-edit": "Хийца коьрта дош",
+	"menueditor-ui-menu-user-sidebar-keyword-label": "Коьрта дош"
+}
