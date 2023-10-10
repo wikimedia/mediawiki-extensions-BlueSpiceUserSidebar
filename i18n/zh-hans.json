@@ -4,7 +4,8 @@
 			"GraceL",
 			"Liuxinyu970226",
 			"Zazzzz",
-			"佛壁灯"
+			"佛壁灯",
+			"Xyb"
 		]
 	},
 	"bs-usersidebar-desc": "自定义个人导航菜单",
@@ -12,5 +13,9 @@
 	"bs-edit-user-sidebar-link-text": "编辑侧边栏",
 	"bs-edit-user-sidebar-link-title": "编辑侧边栏",
 	"bs-edit-user-mm-link-text": "编辑用户菜单",
-	"bs-edit-user-mm-link-title": "编辑用户菜单"
+	"bs-edit-user-mm-link-title": "编辑用户菜单",
+	"menueditor-ui-menu-keyword-usersidebar-label-edit": "编辑关键词",
+	"menueditor-ui-menu-keyword-usersidebar-label": "关键词",
+	"menueditor-ui-menu-user-sidebar-keyword-label-edit": "编辑关键词",
+	"menueditor-ui-menu-user-sidebar-keyword-label": "关键词"
 }
