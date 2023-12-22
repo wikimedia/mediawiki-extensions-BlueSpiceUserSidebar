@@ -3,12 +3,11 @@
 namespace BlueSpice\UserSidebar;
 
 use Config;
-use ResourceLoaderContext;
+use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
 
 class ClientConfig {
 
 	/**
-	 *
 	 * @param ResourceLoaderContext $context
 	 * @param Config $config
 	 * @return array
