@@ -101,8 +101,7 @@ class SidebarParser {
 				} else {
 					$isIndentCharacter = false;
 				}
-			}
-			while ( $isIndentCharacter );
+			} while ( $isIndentCharacter );
 
 			$line = trim( substr( $line, $depth ) );
 

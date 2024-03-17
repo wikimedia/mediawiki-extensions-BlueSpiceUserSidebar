@@ -103,8 +103,7 @@ class Parser {
 				} else {
 					$isIndentCharacter = false;
 				}
-			}
-			while ( $isIndentCharacter );
+			} while ( $isIndentCharacter );
 
 			$line = trim( substr( $line, $depth ) );
 			if ( empty( $line ) ) {
