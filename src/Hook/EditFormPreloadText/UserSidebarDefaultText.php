@@ -33,9 +33,6 @@ class UserSidebarDefaultText extends EditFormPreloadText {
 	 * @return array
 	 */
 	protected function getWidgetLinks() {
-		if ( $this->getContext()->getSkin()->getSkinName() === 'bluespicecalumma' ) {
-			return $this->getLegacyWidgetLinks();
-		}
 		$factory = $this->getServices()->getService( 'BSUserSidebarWidgetFactory' );
 		$widgets = [];
 		foreach ( $factory->getAllKeys() as $key ) {
@@ -43,25 +40,4 @@ class UserSidebarDefaultText extends EditFormPreloadText {
 		}
 		return $widgets;
 	}
-
-	/**
-	 * DEPRECATED
-	 * @deprecated since version 4.1 - - Support ends with BlueSpiceCalumma
-	 * @return array
-	 */
-	private function getLegacyWidgetLinks() {
-		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$widgetRegistry = \ExtensionRegistry::getInstance()->getAttribute(
-			'BlueSpiceUserSidebarWidgets'
-		);
-		$widgets = [];
-		foreach ( $widgetRegistry as $key => $config ) {
-			if ( !$config['default'] ) {
-				continue;
-			}
-			$widgets[] = "* $key";
-		}
-		return $widgets;
-	}
-
 }
