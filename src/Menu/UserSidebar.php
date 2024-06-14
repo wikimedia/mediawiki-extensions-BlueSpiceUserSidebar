@@ -54,6 +54,13 @@ class UserSidebar extends MediawikiSidebar {
 	}
 
 	/**
+	 * @return string[]
+	 */
+	public function getAllowedNodes(): array {
+		return [ 'menu-user-sidebar-keyword', 'menu-raw-text', 'menu-two-fold-link-spec' ];
+	}
+
+	/**
 	 * @inheritDoc
 	 */
 	public function getEmptyContent(): array {
