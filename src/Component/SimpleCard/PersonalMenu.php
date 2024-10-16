@@ -69,6 +69,12 @@ class PersonalMenu extends SimpleCard {
 		$id = strtolower( Sanitizer::escapeIdForAttribute( $this->section ) );
 		$services = MediaWikiServices::getInstance();
 		$linkFormatter = $services->getService( 'MWStakeLinkFormatter' );
+
+		$links = $this->links;
+		foreach ( $links as $key => $link ) {
+			$links[$key]['role'] = 'menuitem';
+		}
+
 		return [
 			new SimpleCardHeader( [
 				'id' => "umcus-menu-head-$id",
@@ -83,7 +89,9 @@ class PersonalMenu extends SimpleCard {
 			new SimpleLinklistGroupFromArray( [
 				'id' => "umcus-manu-$id-linkgroup",
 				'classes' => [ 'menu-card-body', 'menu-list', 'll-dft' ],
-				'links' => $linkFormatter->formatLinks( $this->links ),
+				'links' => $linkFormatter->formatLinks( $links ),
+				'role' => 'menu',
+				'item-role' => 'presentation',
 				'aria' => [
 					'labelledby' => "umcus-menu-head-$id"
 				]
