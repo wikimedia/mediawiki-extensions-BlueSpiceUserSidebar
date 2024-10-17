@@ -39,7 +39,7 @@ class CommonUserInterface implements MWStakeCommonUIRegisterSkinSlotComponents {
 			$registry->register(
 				'UserMenuCards',
 				[
-					"umc-bluespice-item-" . $count++ => [
+					"z-umc-bluespice-item-" . $count++ => [
 						'factory' => static function ()
 							use ( $section, $links ) {
 								return new PersonalMenu(
@@ -54,7 +54,7 @@ class CommonUserInterface implements MWStakeCommonUIRegisterSkinSlotComponents {
 		$registry->register(
 			'UserMenuCards',
 			[
-				"umc-edit-link" => [
+				"a-umc-edit-link" => [
 					'factory' => static function ()
 						use ( $userSidebarTitle ) {
 						return new EditPersonalMenu( $userSidebarTitle );
