@@ -71,9 +71,6 @@ class PersonalMenu extends SimpleCard {
 		$linkFormatter = $services->getService( 'MWStakeLinkFormatter' );
 
 		$links = $this->links;
-		foreach ( $links as $key => $link ) {
-			$links[$key]['role'] = 'menuitem';
-		}
 
 		return [
 			new SimpleCardHeader( [
@@ -90,7 +87,7 @@ class PersonalMenu extends SimpleCard {
 				'id' => "umcus-manu-$id-linkgroup",
 				'classes' => [ 'menu-card-body', 'menu-list', 'll-dft' ],
 				'links' => $linkFormatter->formatLinks( $links ),
-				'role' => 'menu',
+				'role' => 'group',
 				'item-role' => 'presentation',
 				'aria' => [
 					'labelledby' => "umcus-menu-head-$id"
