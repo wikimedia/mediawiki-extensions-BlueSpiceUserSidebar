@@ -5,8 +5,8 @@ namespace BlueSpice\UserSidebar\Menu;
 use BlueSpice\UserSidebar\WidgetFactory;
 use MediaWiki\Extension\MenuEditor\Menu\MediawikiSidebar;
 use MediaWiki\Extension\MenuEditor\Node\Keyword;
+use MediaWiki\Title\Title;
 use MWStake\MediaWiki\Component\Wikitext\ParserFactory;
-use Title;
 
 class UserSidebar extends MediawikiSidebar {
 	/** @var WidgetFactory */

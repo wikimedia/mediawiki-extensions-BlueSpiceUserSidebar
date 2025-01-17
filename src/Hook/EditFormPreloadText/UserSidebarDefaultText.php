@@ -3,6 +3,7 @@
 namespace BlueSpice\UserSidebar\Hook\EditFormPreloadText;
 
 use BlueSpice\Hook\EditFormPreloadText;
+use MediaWiki\Title\Title;
 
 class UserSidebarDefaultText extends EditFormPreloadText {
 
@@ -12,7 +13,7 @@ class UserSidebarDefaultText extends EditFormPreloadText {
 	 */
 	protected function skipProcessing() {
 		$user = $this->getContext()->getUser();
-		$userPage = \Title::makeTitle( NS_USER, $user->getName() . "/Sidebar" );
+		$userPage = Title::makeTitle( NS_USER, $user->getName() . "/Sidebar" );
 		if ( $this->title->equals( $userPage ) ) {
 			return false;
 		}
