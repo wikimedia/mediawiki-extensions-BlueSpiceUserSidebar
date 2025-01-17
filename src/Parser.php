@@ -4,8 +4,8 @@ namespace BlueSpice\UserSidebar;
 
 use IContextSource;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use TextContent;
-use Title;
 use TitleFactory;
 
 class Parser {
