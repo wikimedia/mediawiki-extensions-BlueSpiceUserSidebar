@@ -21,14 +21,14 @@ ext.usersidebar.data.UsersidebarKeywordNode = function ( cfg ) {
 OO.inheritClass( ext.usersidebar.data.UsersidebarKeywordNode,
 	ext.menueditor.ui.data.node.KeywordNode );
 
-ext.usersidebar.data.UsersidebarKeywordNode.prototype.getFormFields = function () {
+ext.usersidebar.data.UsersidebarKeywordNode.prototype.getFormFields = function ( dialog ) {
 	return [
 		{
 			name: 'keyword',
 			type: 'dropdown',
 			options: this.options,
 			// eslint-disable-next-line camelcase
-			widget_$overlay: true,
+			widget_$overlay: dialog.$overlay,
 			required: true,
 			label: mw.message( 'menueditor-ui-form-field-keyword' ).text(),
 			help: mw.message( 'menueditor-ui-menu-keyword-help' ).text()
