@@ -4,9 +4,9 @@ namespace BlueSpice\UserSidebar\HookHandler;
 
 use BlueSpice\UserSidebar\Component\EditPersonalMenu;
 use BlueSpice\UserSidebar\Component\SimpleCard\PersonalMenu;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\CommonUserInterface\Hook\MWStakeCommonUIRegisterSkinSlotComponents;
-use RequestContext;
 
 class CommonUserInterface implements MWStakeCommonUIRegisterSkinSlotComponents {
 
