@@ -2,7 +2,7 @@
 
 namespace BlueSpice\UserSidebar;
 
-use Message;
+use MediaWiki\Message\Message;
 
 interface IWidget {
 	/**
