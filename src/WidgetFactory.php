@@ -31,8 +31,7 @@ class WidgetFactory {
 	}
 
 	/**
-	 * @param use IContextSource;
- $context
+	 * @param IContextSource $context
 	 * @param array $params
 	 * @return IWidget[]
 	 */
