@@ -2,8 +2,8 @@
 
 namespace BlueSpice\UserSidebar;
 
-use Config;
 use IContextSource;
+use MediaWiki\Config\Config;
 use MWStake\MediaWiki\Component\ManifestRegistry\IRegistry;
 
 class WidgetFactory {
