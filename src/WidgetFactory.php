@@ -2,8 +2,8 @@
 
 namespace BlueSpice\UserSidebar;
 
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MWStake\MediaWiki\Component\ManifestRegistry\IRegistry;
 
 class WidgetFactory {
@@ -31,7 +31,8 @@ class WidgetFactory {
 	}
 
 	/**
-	 * @param IContextSource $context
+	 * @param use IContextSource;
+ $context
 	 * @param array $params
 	 * @return IWidget[]
 	 */
