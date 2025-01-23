@@ -2,8 +2,8 @@
 
 namespace BlueSpice\UserSidebar;
 
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class Widget implements IWidget {
 
