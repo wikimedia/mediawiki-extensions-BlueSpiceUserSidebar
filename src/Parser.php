@@ -2,11 +2,11 @@
 
 namespace BlueSpice\UserSidebar;
 
+use MediaWiki\Content\TextContent;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFactory;
-use TextContent;
 
 class Parser {
 	/**
