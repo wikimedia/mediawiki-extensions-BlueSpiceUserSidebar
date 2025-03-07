@@ -18,7 +18,6 @@
 			}
 		},
 		"BlueSpiceUserSidebar": {
-			"Widgets": {},
 			"WidgetRegistry": {}
 		},
 		"MenuEditor": {
@@ -103,7 +102,7 @@
 	},
 	"config": {
 		"MenuEditorUserSidebarAllowedKeywords": {
-			"value": [ "PAGESVISITED", "YOUREDITS" ]
+			"value": [ "PAGESVISITED", "YOUREDITS", "WATCHLIST" ]
 		}
 	},
 	"manifest_version": 2
