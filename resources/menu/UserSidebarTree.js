@@ -1,7 +1,4 @@
-// eslint-disable-next-line no-global-assign
-ext = ext || {};
-ext.usersidebar = ext.usersidebar || {};
-ext.usersidebar.menu = {};
+bs.util.registerNamespace( 'ext.usersidebar.menu' );
 
 ext.usersidebar.menu.UserSidebarTree = function ( cfg ) {
 	ext.usersidebar.menu.UserSidebarTree.parent.call( this, cfg );
