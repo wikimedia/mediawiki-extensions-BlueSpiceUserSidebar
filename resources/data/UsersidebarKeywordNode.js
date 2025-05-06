@@ -1,17 +1,14 @@
-// eslint-disable-next-line no-global-assign
-ext = ext || {};
-ext.usersidebar = ext.usersidebar || {};
-ext.usersidebar.data = {};
+bs.util.registerNamespace( 'ext.usersidebar.data' );
 
 ext.usersidebar.data.UsersidebarKeywordNode = function ( cfg ) {
 	ext.usersidebar.data.UsersidebarKeywordNode.parent.call( this, cfg );
 
-	var config = require( './config.json' );
-	var keywords = config.allowedUserSidebarKeywords;
+	const config = require( './config.json' );
+	const keywords = config.allowedUserSidebarKeywords;
 
 	this.options = [];
-	for ( var i = 0; i < keywords.length; i++ ) {
-		var object = {
+	for ( let i = 0; i < keywords.length; i++ ) {
+		const object = {
 			data: keywords[ i ]
 		};
 		this.options.push( object );
