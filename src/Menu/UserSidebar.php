@@ -70,4 +70,11 @@ class UserSidebar extends MediawikiSidebar {
 		}
 		return $nodes;
 	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getEditRight(): string {
+		return 'edit';
+	}
 }
